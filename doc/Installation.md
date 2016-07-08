@@ -9,7 +9,7 @@ not yet available
   * Install ros-indigo-dektop-full as described here: http://wiki.ros.org/indigo/Installation/Ubuntu)
   * Install additional tools: sudo apt-get install ros-indigo-ros python-wstool
 
-1. Create catkin workspace
+2. Create catkin workspace
 
 ```
 source /opt/ros/indigo/setup.bash
@@ -20,14 +20,16 @@ wstool init src
 catkin_make
 ```
 
-1. Get ATF sources from github
+3. Get ATF sources from github
+
+4. Get ros_comm overlay
 ```
 cd ~/catkin_ws/src
 wstool merge -y https://raw.githubusercontent.com/ipa-fmw/atf/master/.travis.rosinstall
 wstool update
 ```
 
-1. Get dependendies
+5. Get dependendies
 (Note: you need sudo rights!)
 ```
 sudo rosdep init
@@ -36,13 +38,13 @@ cd ~/catkin_ws
 rosdep install --from-path src -i -y
 ```
 
-1. Compile sources
+6. Compile sources
 ```
 cd ~/catkin_ws
 catkin_make
 ```
 
-1. Source setup.bash
+7. Source setup.bash
 ```
 source ~/catkin_ws/devel/setup.bash
 ```
